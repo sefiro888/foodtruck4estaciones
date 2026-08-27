@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="truckBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e1d1f"/>
+      <stop offset="100%" stop-color="#2a282b"/>
+    </linearGradient>
+    <linearGradient id="awningGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5B51B"/>
+      <stop offset="100%" stop-color="#E97917"/>
+    </linearGradient>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Chasis y Carrocería del Food Truck -->
+  <g>
+    <!-- Sombra del camión -->
+    <ellipse cx="200" cy="265" rx="160" ry="14" fill="#000000" opacity="0.6"/>
+
+    <!-- Cabina y Caja trasera -->
+    <path d="M 60,230 L 60,110 Q 60,95 75,95 L 270,95 L 320,135 L 340,175 L 340,230 Z" fill="url(#truckBody)" stroke="#F5B51B" stroke-width="3"/>
+    
+    <!-- Ventana de conductor -->
+    <path d="M 275,108 L 312,140 L 275,140 Z" fill="#3A393B" stroke="#F6E7C2" stroke-width="1.5"/>
+
+    <!-- Ventana de Servicio / Barra Street Food -->
+    <rect x="85" y="115" width="165" height="75" rx="4" fill="#121214" stroke="#E97917" stroke-width="2"/>
+    <line x1="85" y1="190" x2="250" y2="190" stroke="#704526" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Toldo a Rayas Abatible -->
+    <path d="M 75,105 L 260,95 L 265,115 L 70,125 Z" fill="url(#awningGrad)" filter="url(#neonGlow)"/>
+    <polygon points="75,105 110,103 105,123 70,125" fill="#111214" opacity="0.25"/>
+    <polygon points="145,101 180,99 175,119 140,121" fill="#111214" opacity="0.25"/>
+    <polygon points="215,97 250,95 245,115 210,117" fill="#111214" opacity="0.25"/>
+
+    <!-- Luces de Neón Servicio -->
+    <circle cx="110" cy="130" r="3" fill="#FFF9EC" filter="url(#neonGlow)"/>
+    <circle cx="140" cy="130" r="3" fill="#F5B51B" filter="url(#neonGlow)"/>
+    <circle cx="170" cy="130" r="3" fill="#E97917" filter="url(#neonGlow)"/>
+    <circle cx="200" cy="130" r="3" fill="#FFF9EC" filter="url(#neonGlow)"/>
+    <circle cx="230" cy="130" r="3" fill="#F5B51B" filter="url(#neonGlow)"/>
+
+    <!-- Cartel en Ventana -->
+    <text x="167" y="160" fill="#F5B51B" font-family="'Impact', sans-serif" font-size="16" letter-spacing="2" text-anchor="middle">FULL TRACK</text>
+    <text x="167" y="176" fill="#FFF9EC" font-family="sans-serif" font-size="9" font-weight="bold" letter-spacing="3" text-anchor="middle">SANTANDER</text>
+
+    <!-- Focos Delanteros y Traseros -->
+    <circle cx="335" cy="190" r="7" fill="#FFF9EC" filter="url(#neonGlow)"/>
+    <circle cx="62" cy="190" r="5" fill="#E85D36"/>
+
+    <!-- Pasos de rueda y Ruedas -->
+    <path d="M 90,230 A 30,30 0 0,1 150,230" fill="#111214"/>
+    <circle cx="120" cy="230" r="25" fill="#151515" stroke="#3A393B" stroke-width="4"/>
+    <circle cx="120" cy="230" r="14" fill="#E97917"/>
+    <circle cx="120" cy="230" r="5" fill="#FFF9EC"/>
+
+    <path d="M 260,230 A 30,30 0 0,1 320,230" fill="#111214"/>
+    <circle cx="290" cy="230" r="25" fill="#151515" stroke="#3A393B" stroke-width="4"/>
+    <circle cx="290" cy="230" r="14" fill="#E97917"/>
+    <circle cx="290" cy="230" r="5" fill="#FFF9EC"/>
+
+    <!-- Detalles Parachoques y Tubo de Escape -->
+    <rect x="50" y="222" width="15" height="8" rx="2" fill="#3A393B"/>
+    <rect x="335" y="222" width="12" height="8" rx="2" fill="#3A393B"/>
+  </g>
+</svg>

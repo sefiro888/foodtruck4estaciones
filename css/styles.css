@@ -1,0 +1,3566 @@
+/* ==========================================================================
+   FULL TRACK 4 ESTACIONES — HOJA DE ESTILOS PRINCIPAL
+   Estética: Street Food Industrial Premium, Santander
+   ========================================================================== */
+
+/* 1. VARIABLES GLOBALES & PALETA DE COLOR */
+:root {
+  --bg-carbon: #111214;
+  --bg-brick-dark: #171618;
+  --bg-brick: #201e21;
+  --bg-card: #1c1b1e;
+  --bg-card-hover: #262428;
+  
+  --color-metal: #3A393B;
+  --color-metal-light: #525054;
+  
+  --color-yellow: #F5B51B;
+  --color-yellow-light: #FCE074;
+  --color-yellow-glow: rgba(245, 181, 27, 0.35);
+  
+  --color-orange: #E97917;
+  --color-orange-dark: #C53916;
+  --color-orange-glow: rgba(233, 121, 23, 0.4);
+  
+  --color-cream: #F6E7C2;
+  --color-wood: #704526;
+  --color-wood-dark: #4A2B14;
+  --color-white: #FFF9EC;
+  --color-text-muted: #BDB9BD;
+  
+  --glovo-yellow: #FFC244;
+  --glovo-green: #00A082;
+  --whatsapp-green: #25D366;
+  
+  --font-title: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+  --font-heading: 'Oswald', 'Bebas Neue', sans-serif;
+  --font-body: 'Montserrat', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --shadow-warm: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 181, 27, 0.15);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --border-industrial: 1px solid rgba(245, 181, 27, 0.2);
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+/* 2. RESET Y BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-carbon);
+  color: var(--color-white);
+  font-family: var(--font-body);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-carbon);
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(245, 181, 27, 0.08) 0%, transparent 60%),
+    linear-gradient(to bottom, rgba(17, 18, 20, 0.90), rgba(17, 18, 20, 0.96)),
+    url('../assets/dark-brick-texture.jpg');
+  background-size: auto, auto, 500px 500px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+/* 3. TIPOGRAFÍAS Y ENCABEZADOS */
+h1, h2, h3, h4, .font-title {
+  font-family: var(--font-title);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.highlight-yellow {
+  color: var(--color-yellow);
+}
+
+.highlight-orange {
+  color: var(--color-orange);
+}
+
+.highlight-cream {
+  color: var(--color-cream);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-yellow-light) 0%, var(--color-yellow) 50%, var(--color-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 4. CONTENEDORES Y ESTRUCTURA */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  background: rgba(245, 181, 27, 0.1);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(245, 181, 27, 0.3);
+  margin-bottom: 1rem;
+}
+
+.section-tag i {
+  color: var(--color-orange);
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-yellow), var(--color-orange));
+  margin: 1.2rem auto 0 auto;
+  border-radius: 2px;
+}
+
+/* 5. BOTONES */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-yellow) 0%, #ebb017 100%);
+  color: #111214;
+  font-weight: 800;
+  box-shadow: 0 4px 18px var(--color-yellow-glow);
+  border: 1px solid #ffd466;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-orange) 0%, #d86908 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 25px var(--color-orange-glow);
+  transform: translateY(-2px);
+  border-color: var(--color-orange);
+}
+
+.btn-secondary {
+  background: rgba(17, 18, 20, 0.7);
+  color: var(--color-yellow);
+  border: 1.5px solid var(--color-yellow);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: var(--color-yellow);
+  color: #111214;
+  box-shadow: 0 4px 20px var(--color-yellow-glow);
+  transform: translateY(-2px);
+}
+
+.btn-glovo {
+  background: #FFC244;
+  color: #111214;
+  font-weight: 800;
+  border: 1px solid #ffda85;
+}
+
+.btn-glovo:hover {
+  background: #ffb114;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 194, 68, 0.4);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid #48e482;
+}
+
+.btn-whatsapp:hover {
+  background: #1eb956;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-sm {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* 6. CABECERA & NAVEGACIÓN SUPERIOR */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.1rem 0;
+  transition: var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  background: rgba(17, 18, 20, 0.95);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(245, 181, 27, 0.15);
+  padding: 0.7rem 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand-logo-img {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.brand-sub {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-yellow);
+  text-transform: uppercase;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--color-yellow), var(--color-orange));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-yellow);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Botón Hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: var(--color-yellow);
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* 7. HERO PRINCIPAL (ESTÉTICA INDUSTRIAL CON FOCOS Y LADRILLO REAL) */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 7.5rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  background-color: #111214;
+}
+
+/* Pared de Ladrillo & Focos Fotográficos Reales */
+.hero-bg-brick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(17, 18, 20, 0.88) 0%, rgba(17, 18, 20, 0.55) 45%, rgba(17, 18, 20, 0.75) 100%),
+    linear-gradient(to bottom, rgba(17, 18, 20, 0.3) 0%, transparent 60%, rgba(17, 18, 20, 0.95) 100%),
+    url('../assets/hero-brick-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Overlay de destello cálido adicional */
+.hero-bg-brick::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, rgba(245, 181, 27, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.spotlights-wrapper {
+  display: none;
+}
+
+/* Suelo de Madera Tostada Inferior */
+.hero-wood-floor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(to top, #2b180a, var(--color-wood) 60%, #6e4324 100%);
+  border-top: 2px solid #8e582d;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.8);
+  z-index: 2;
+  opacity: 0.9;
+}
+
+/* Cabeceras de Páginas Interiores con textura de ladrillo real */
+.page-hero-brick {
+  position: relative;
+  background-image: 
+    linear-gradient(to bottom, rgba(17, 18, 20, 0.75) 0%, rgba(17, 18, 20, 0.92) 100%),
+    url('../assets/hero-brick-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  border-bottom: 2px solid rgba(245, 181, 27, 0.25);
+}
+
+/* Contenido del Hero */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(37, 35, 38, 0.85);
+  border: 1px solid rgba(245, 181, 27, 0.4);
+  padding: 0.45rem 1.2rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-yellow);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6.5vw, 5.2rem);
+  line-height: 0.95;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  color: var(--color-cream);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  max-width: 540px;
+  margin-bottom: 2.2rem;
+  color: #d1cdd3;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-trust-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(245, 181, 27, 0.2);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.trust-item i {
+  color: var(--color-yellow);
+  font-size: 1.1rem;
+}
+
+/* Tarjeta Gráfica Hero Derecha — SHOWCASE CINEMATOGRÁFICO FOOD TRUCK */
+.hero-visual-card {
+  position: relative;
+  background: linear-gradient(160deg, rgba(28, 26, 30, 0.95) 0%, rgba(17, 18, 20, 0.98) 100%);
+  border: 2px solid rgba(245, 181, 27, 0.6);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.8rem;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(245, 181, 27, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hero-visual-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--color-yellow);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.95),
+    0 0 45px rgba(245, 181, 27, 0.4);
+}
+
+.hero-visual-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-yellow), var(--color-orange), var(--color-yellow));
+  box-shadow: 0 0 12px var(--color-yellow);
+}
+
+.hero-corner-ribbon {
+  position: absolute;
+  top: 22px;
+  right: -38px;
+  background: linear-gradient(135deg, var(--color-orange), #ff4800);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 5px 42px;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+/* Encabezado de la Tarjeta con Logo y Badges */
+.hero-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-logo-mini {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.8));
+  animation: floatMini 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatMini {
+  0% { transform: translateY(0px) rotate(-2deg); }
+  100% { transform: translateY(-4px) rotate(2deg); }
+}
+
+.hero-card-brand-info h3 {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+}
+
+.hero-card-brand-info span {
+  font-size: 0.82rem;
+  font-family: var(--font-heading);
+  color: var(--color-yellow);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Ventana de Showcase del Food Truck Real */
+.foodtruck-showcase-box {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid rgba(245, 181, 27, 0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.6);
+  margin-bottom: 1.4rem;
+  background: #000;
+}
+
+.foodtruck-showcase-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center 60%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-visual-card:hover .foodtruck-showcase-img {
+  transform: scale(1.06);
+}
+
+.foodtruck-overlay-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(17, 18, 20, 0.85);
+  border: 1px solid rgba(245, 181, 27, 0.5);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-yellow);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.foodtruck-live-dot {
+  width: 7px;
+  height: 7px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #25D366;
+}
+
+.hero-card-slogan-box {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.hero-card-slogan {
+  font-family: var(--font-title);
+  font-size: 1.65rem;
+  color: var(--color-white);
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+}
+
+.hero-card-sub {
+  font-size: 0.88rem;
+  color: #cfcbcf;
+  margin: 0;
+}
+
+/* Grid de Características y Estadísticas */
+.hero-card-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  border-top: 1px solid rgba(245, 181, 27, 0.2);
+  padding-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.stat-pill {
+  background: rgba(35, 33, 37, 0.7);
+  border: 1px solid rgba(58, 57, 59, 0.8);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--color-white);
+  transition: var(--transition-smooth);
+}
+
+.stat-pill:hover {
+  background: rgba(245, 181, 27, 0.12);
+  border-color: var(--color-yellow);
+  transform: translateY(-2px);
+}
+
+/* 10. SECCIÓN ESPECIAL: HELADOS ARTESANALES & BEBIDAS DEL MUNDO */
+.special-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.special-card {
+  background: linear-gradient(145deg, #1d1b1f 0%, #141315 100%);
+  border: 2px solid rgba(245, 181, 27, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.special-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-yellow);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 25px var(--color-yellow-glow);
+}
+
+.special-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.special-card-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(245, 181, 27, 0.12);
+  border: 1.5px solid rgba(245, 181, 27, 0.4);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--color-yellow);
+  flex-shrink: 0;
+}
+
+.special-mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.special-thumb-card {
+  background: #111214;
+  border: 1px solid rgba(58, 57, 59, 0.8);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.special-thumb-card:hover {
+  border-color: var(--color-yellow);
+  transform: scale(1.04);
+}
+
+.special-thumb-img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+
+.special-thumb-title {
+  font-size: 0.72rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0.35rem 0.2rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* SECCIÓN: INSTAGRAM REEL SHOWCASE */
+.instagram-banner-card {
+  background: linear-gradient(135deg, rgba(35, 20, 30, 0.9) 0%, rgba(20, 18, 22, 0.95) 100%);
+  border: 2px solid #E1306C;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 25px rgba(225, 48, 108, 0.25);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-btn {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(221, 42, 123, 0.4);
+  border: none;
+}
+
+.instagram-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(221, 42, 123, 0.6);
+  color: #fff;
+}
+
+.instagram-preview-box {
+  background: #111214;
+  border: 1.5px solid rgba(225, 48, 108, 0.4);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+/* SECCIÓN: RESEÑAS DE GOOGLE */
+.google-badge-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(66, 133, 244, 0.12);
+  border: 1px solid rgba(66, 133, 244, 0.35);
+  color: #8ab4f8;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
+.review-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 57, 59, 0.8);
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-card:hover {
+  border-color: var(--color-yellow);
+  transform: translateY(-4px);
+}
+
+.review-stars {
+  color: var(--color-yellow);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(58, 57, 59, 0.5);
+}
+
+/* ==========================================================================
+   CINTA RODANTE DE NEÓN STREET FOOD (TICKER TAPE)
+   ========================================================================== */
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.055), transparent 42%),
+    repeating-linear-gradient(105deg, rgba(255,255,255,0.018) 0 2px, transparent 2px 8px),
+    #111214;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-image: repeating-linear-gradient(135deg, var(--color-yellow) 0 15px, #161619 15px 30px) 3;
+  padding: 0.78rem 0;
+  box-shadow: inset 0 1px rgba(255,255,255,0.04), 0 9px 25px rgba(0,0,0,0.48);
+  position: relative;
+  z-index: 10;
+}
+
+.ticker-top {
+  margin-top: 82px;
+}
+
+.ticker-content {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: tickerSlide 36s linear infinite;
+  gap: 0;
+  will-change: transform;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1.65px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  padding: 0 2.1rem;
+  border-right: 1px solid rgba(245,181,27,0.28);
+}
+
+.ticker-item i {
+  color: var(--color-yellow);
+}
+
+.ticker-item strong {
+  color: var(--color-yellow);
+}
+
+.ticker-wrap:hover .ticker-content {
+  animation-play-state: paused;
+}
+
+@keyframes tickerSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+  .ticker-wrap { padding: 0.7rem 0; }
+  .ticker-top { margin-top: 66px; }
+  .ticker-content { animation-duration: 29s; }
+  .ticker-item {
+    font-size: 0.76rem;
+    letter-spacing: 1.25px;
+    padding-inline: 1.35rem;
+  }
+}
+
+/* ==========================================================================
+   TARJETA EXCLUSIVA: VIAJEROS & ESTACIÓN EXPRESS
+   ========================================================================== */
+.traveler-express-card {
+  background: linear-gradient(145deg, #221f24 0%, #151417 100%);
+  border: 2px solid var(--color-yellow);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 2.8rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.85), 0 0 30px var(--color-yellow-glow);
+}
+
+.traveler-express-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(245, 181, 27, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.traveler-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.traveler-speed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(245, 181, 27, 0.15);
+  border: 1.5px solid var(--color-yellow);
+  color: var(--color-yellow);
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 15px var(--color-yellow-glow);
+}
+
+.traveler-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.8rem 0 2.2rem 0;
+}
+
+.traveler-perk {
+  background: rgba(17, 18, 20, 0.75);
+  border: 1px solid rgba(58, 57, 59, 0.8);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.traveler-perk i {
+  color: var(--color-yellow);
+  font-size: 1.3rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.traveler-perk h4 {
+  font-size: 0.95rem;
+  color: var(--color-white);
+  margin-bottom: 0.15rem;
+}
+
+.traveler-perk p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Tarjeta Visual de Ruta Express */
+.traveler-visual-box {
+  background: #111214;
+  border: 2px solid rgba(245, 181, 27, 0.4);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+.traveler-clock-icon {
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(135deg, var(--color-yellow), var(--color-orange));
+  color: #111214;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.3rem;
+  margin: 0 auto 1.2rem auto;
+  box-shadow: 0 6px 20px var(--color-yellow-glow);
+}
+
+/* ==========================================================================
+   BARRA DE CONTADORES / IMPACTO EN NÚMEROS
+   ========================================================================== */
+.stats-counter-strip {
+  background: #151417;
+  border-top: 1px solid rgba(245, 181, 27, 0.2);
+  border-bottom: 1px solid rgba(245, 181, 27, 0.2);
+  padding: 2.5rem 0;
+}
+
+.stats-counter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.stat-counter-box {
+  padding: 1rem;
+}
+
+.stat-counter-number {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--color-yellow);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 0 15px var(--color-yellow-glow);
+}
+
+.stat-counter-label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-cream);
+  text-transform: uppercase;
+}
+
+.stat-pill i {
+  color: var(--color-yellow);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.stat-pill strong {
+  color: var(--color-yellow);
+}
+
+.hero-card-action {
+  text-align: center;
+}
+
+/* 8. SECCIÓN: LO QUE NOS REPRESENTA (3 TARJETAS) */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(245, 181, 27, 0.2);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-yellow), var(--color-orange));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-yellow);
+  background: var(--bg-card-hover);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.6), 0 0 15px var(--color-yellow-glow);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-icon-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  background: rgba(245, 181, 27, 0.1);
+  border: 1px solid rgba(245, 181, 27, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--color-yellow);
+  margin-bottom: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.feature-card:hover .feature-icon-box {
+  background: var(--color-yellow);
+  color: #111214;
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.feature-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 9. SECCIÓN: FAVORITOS DE FULL TRACK */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 57, 59, 0.7);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-yellow);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.7), 0 0 18px var(--color-yellow-glow);
+}
+
+/* Imagen real de comida con marco industrial y zoom en hover */
+.product-image-box {
+  height: 210px;
+  background: #19181b;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(245, 181, 27, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.08);
+}
+
+.product-image-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(17, 18, 20, 0.85) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.food-icon-placeholder {
+  font-size: 3.5rem;
+  color: var(--color-yellow);
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
+.product-card:hover .food-icon-placeholder {
+  transform: scale(1.15) rotate(5deg);
+  color: var(--color-yellow-light);
+}
+
+.placeholder-tag {
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  letter-spacing: 1.5px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.product-badge-corner {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--color-orange);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.product-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+  gap: 0.8rem;
+}
+
+.product-name {
+  font-size: 1.45rem;
+  line-height: 1.1;
+  color: var(--color-white);
+}
+
+.product-price {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  color: var(--color-yellow);
+  white-space: nowrap;
+}
+
+.product-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin-bottom: 1.4rem;
+  flex-grow: 1;
+}
+
+.product-footer {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* 10. BANNERS: GLOVO Y EVENTOS */
+.banner-glovo {
+  background: linear-gradient(135deg, #1c1a16 0%, #29241b 100%);
+  border: 2px solid var(--glovo-yellow);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 194, 68, 0.2);
+}
+
+.banner-glovo::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 194, 68, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.banner-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.banner-glovo h2 {
+  color: var(--color-white);
+}
+
+.banner-glovo h2 span {
+  color: var(--glovo-yellow);
+}
+
+.banner-glovo p {
+  font-size: 1.1rem;
+  color: #e0ded8;
+  margin-bottom: 1.8rem;
+}
+
+.banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.banner-icon-side {
+  text-align: center;
+}
+
+.banner-badge-box {
+  display: inline-block;
+  background: rgba(17, 18, 20, 0.8);
+  border: 1px solid rgba(255, 194, 68, 0.4);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.banner-badge-box i {
+  font-size: 4.5rem;
+  color: var(--glovo-yellow);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+/* Banner de Eventos */
+.banner-events {
+  background: linear-gradient(135deg, #1f1b19 0%, #2d241c 100%);
+  border: 2px solid var(--color-orange);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px var(--color-orange-glow);
+}
+
+/* 11. PÁGINA CARTA (carta.html) */
+.menu-controls {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menu-search-wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.menu-search-input {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1.5px solid rgba(245, 181, 27, 0.3);
+  border-radius: 50px;
+  padding: 0.85rem 1.4rem 0.85rem 3rem;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.menu-search-input:focus {
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 15px var(--color-yellow-glow);
+  outline: none;
+}
+
+.menu-search-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-yellow);
+  font-size: 1.1rem;
+}
+
+/* Pestañas de Categoría */
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.cat-btn {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.6rem 1.3rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 57, 59, 0.8);
+  border-radius: 50px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.cat-btn:hover {
+  border-color: var(--color-yellow);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.cat-btn.active {
+  background: var(--color-yellow);
+  color: #111214;
+  border-color: var(--color-yellow);
+  box-shadow: 0 4px 15px var(--color-yellow-glow);
+}
+
+/* Aviso Legal de Carta */
+.menu-disclaimer {
+  background: rgba(37, 35, 38, 0.7);
+  border-left: 4px solid var(--color-yellow);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem 1.5rem;
+  margin-top: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.menu-disclaimer i {
+  font-size: 1.8rem;
+  color: var(--color-yellow);
+  flex-shrink: 0;
+}
+
+.menu-disclaimer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* 12. PÁGINA EVENTOS (eventos.html) */
+.event-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.event-type-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 57, 59, 0.7);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.event-type-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-orange);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6), 0 0 15px var(--color-orange-glow);
+}
+
+.event-type-icon {
+  font-size: 2.8rem;
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+}
+
+.event-type-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Pasos del Proceso (1-4) */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  position: relative;
+  margin-bottom: 4.5rem;
+}
+
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(245, 181, 27, 0.2);
+  border-radius: var(--radius-md);
+  padding: 2.2rem 1.8rem;
+  position: relative;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.step-card:hover {
+  border-color: var(--color-yellow);
+  transform: translateY(-4px);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-yellow), var(--color-orange));
+  color: #111214;
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem auto;
+  box-shadow: 0 4px 15px var(--color-yellow-glow);
+}
+
+.step-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Formulario de Eventos */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 2px solid var(--color-yellow);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-warm);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-cream);
+  text-transform: uppercase;
+}
+
+.form-control {
+  background: #121113;
+  border: 1.5px solid rgba(58, 57, 59, 0.8);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.1rem;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.form-control:focus {
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 10px var(--color-yellow-glow);
+  outline: none;
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* 13. PÁGINA NOSOTROS (nosotros.html) */
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.about-photo-placeholder {
+  background: linear-gradient(145deg, #252327 0%, #171618 100%);
+  border: 2px dashed rgba(245, 181, 27, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.about-photo-placeholder i {
+  font-size: 4rem;
+  color: var(--color-yellow);
+  margin-bottom: 1rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(245, 181, 27, 0.2);
+  border-radius: var(--radius-md);
+  padding: 2.2rem 1.8rem;
+  transition: var(--transition-smooth);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-yellow);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.value-icon {
+  font-size: 2.2rem;
+  color: var(--color-yellow);
+  margin-bottom: 1rem;
+}
+
+/* 14. PÁGINA CONTACTO (contacto.html) */
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-info-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(245, 181, 27, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(245, 181, 27, 0.1);
+  border: 1px solid rgba(245, 181, 27, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--color-yellow);
+  flex-shrink: 0;
+}
+
+.info-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.info-content p, .info-content a {
+  font-size: 0.95rem;
+  color: var(--color-cream);
+}
+
+.info-content a:hover {
+  color: var(--color-yellow);
+  text-decoration: underline;
+}
+
+/* Estado EN VIVO (Abierto / Cerrado) */
+.live-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.live-status-badge.open {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.4);
+}
+
+.live-status-badge.closed {
+  background: rgba(232, 93, 54, 0.15);
+  color: #E85D36;
+  border: 1px solid rgba(232, 93, 54, 0.4);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Horario Semanal Tabla */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.schedule-table tr {
+  border-bottom: 1px solid rgba(58, 57, 59, 0.5);
+}
+
+.schedule-table tr:last-child {
+  border-bottom: none;
+}
+
+.schedule-table td {
+  padding: 0.7rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.schedule-table .day-name {
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.schedule-table .day-hours {
+  text-align: right;
+  color: var(--color-cream);
+}
+
+.schedule-table .closed-day {
+  color: #e85d36;
+  font-weight: 700;
+}
+
+.schedule-table tr.current-day {
+  background: rgba(245, 181, 27, 0.12);
+  border-radius: 4px;
+}
+
+.schedule-table tr.current-day td {
+  color: var(--color-yellow);
+  font-weight: 700;
+}
+
+/* Mapa Visual Santander */
+.map-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 57, 59, 0.8);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.map-embed-wrapper {
+  width: 100%;
+  height: 320px;
+  background: #1a191c;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-embed-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(28%) contrast(1.06) brightness(0.92) saturate(0.82);
+}
+
+.map-live-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 0.68rem;
+  color: #111214;
+  background: var(--color-yellow);
+  border: 2px solid rgba(17,18,20,0.82);
+  border-radius: 5px;
+  box-shadow: 0 5px 16px rgba(0,0,0,0.42);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .map-embed-wrapper { height: 285px; }
+  .map-live-badge { top: 10px; left: 10px; }
+}
+
+.map-footer-info {
+  padding: 1.5rem;
+  background: #171619;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* 15. PIE DE PÁGINA (FOOTER) */
+.site-footer {
+  background: #0d0e0f;
+  border-top: 2px solid rgba(245, 181, 27, 0.2);
+  padding: 5rem 0 2rem 0;
+  margin-top: auto;
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-yellow), var(--color-orange), var(--color-yellow));
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 1fr 1.1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand .footer-logo-img {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 1.2rem;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(37, 35, 38, 0.8);
+  border: 1px solid rgba(245, 181, 27, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-yellow);
+  font-size: 1.1rem;
+  transition: var(--transition-smooth);
+}
+
+.social-btn:hover {
+  background: var(--color-yellow);
+  color: #111214;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px var(--color-yellow-glow);
+}
+
+.footer-col h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1.4rem;
+  color: var(--color-white);
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  height: 2.5px;
+  background: var(--color-yellow);
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-links a:hover {
+  color: var(--color-yellow);
+  transform: translateX(4px);
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+.footer-contact-list i {
+  color: var(--color-yellow);
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(58, 57, 59, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: #8f8c91;
+}
+
+.footer-slogan {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: var(--color-yellow);
+}
+
+/* 16. BOTÓN FLOTANTE WHATSAPP & BARRA MÓVIL INFERIOR */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 52px;
+  height: 52px;
+  background: #25D366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.55rem;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.38);
+  z-index: 990;
+  transition: var(--transition-smooth);
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 9px 24px rgba(37, 211, 102, 0.52);
+  color: #fff;
+}
+
+/* Barra Fija Inferior en Móvil */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 62px;
+  background: rgba(17, 18, 20, 0.97);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(245, 181, 27, 0.3);
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.8);
+}
+
+.mobile-bottom-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.mobile-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  flex: 1;
+  height: 100%;
+  padding: 0.2rem 0;
+}
+
+.mobile-bar-item i {
+  font-size: 1.25rem;
+}
+
+.mobile-bar-item.item-glovo {
+  color: var(--glovo-yellow);
+}
+
+.mobile-bar-item.item-wa {
+  color: var(--whatsapp-green);
+}
+
+.mobile-bar-item.active {
+  color: var(--color-yellow);
+  background: rgba(245, 181, 27, 0.08);
+}
+
+/* 17. RESPONSIVE DESIGN & MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-desc {
+    margin: 0 auto 2rem auto;
+  }
+  
+  .hero-cta-group {
+    justify-content: center;
+  }
+  
+  .hero-trust-bar {
+    justify-content: center;
+  }
+  
+  .banner-grid, .about-intro-grid, .contact-layout-grid, .special-showcase-grid, .instagram-banner-card {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: #151417;
+    border-left: 2px solid var(--color-yellow);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6rem 2rem 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+    transition: right 0.4s ease;
+    z-index: 1001;
+  }
+  
+  .main-nav.active {
+    right: 0;
+  }
+  
+  .header-actions .btn-glovo,
+  .header-actions .btn-whatsapp {
+    display: none;
+  }
+  
+  .special-showcase-grid, .instagram-banner-card {
+    grid-template-columns: 1fr;
+  }
+
+  .special-mini-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .special-thumb-img {
+    height: 75px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 5rem;
+  }
+  
+  .mobile-bottom-bar {
+    display: block;
+  }
+  
+  .floating-whatsapp {
+    bottom: 75px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+  
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+/* ==========================================================================
+   EFECTOS VIVOS: BRASAS FLOTANTES & PARTICULAS CANVAS
+   ========================================================================== */
+#embersCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ==========================================================================
+   INSIGNIA GIRATORIA 3D "SELLO DE CALIDAD"
+   ========================================================================== */
+.rotating-stamp-badge {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 110px;
+  height: 110px;
+  z-index: 10;
+  pointer-events: none;
+  animation: spinSlow 18s linear infinite;
+}
+
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   TOAST DE ACTIVIDAD Y PEDIDOS EN VIVO (SOCIAL PROOF)
+   ========================================================================== */
+.live-activity-toast {
+  position: fixed;
+  bottom: 85px;
+  left: 25px;
+  background: rgba(22, 20, 24, 0.95);
+  border: 1.5px solid var(--color-yellow);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--color-yellow-glow);
+  backdrop-filter: blur(12px);
+  z-index: 995;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 340px;
+  transform: translateX(-150%);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.live-activity-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast-icon-pulse {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--color-yellow), var(--color-orange));
+  color: #111214;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  animation: pulseDot 2s infinite;
+}
+
+.toast-info h5 {
+  font-size: 0.85rem;
+  color: #fff;
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.15rem;
+}
+
+.toast-info p {
+  font-size: 0.76rem;
+  color: var(--color-cream);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.toast-time {
+  font-size: 0.7rem;
+  color: var(--color-yellow);
+  font-weight: 700;
+}
+
+.toast-close-btn {
+  color: #777;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: color 0.2s;
+}
+
+.toast-close-btn:hover {
+  color: #fff;
+}
+
+/* ==========================================================================
+   CONFIGURADOR INTERACTIVO DE COMBOS EN VIVO (COMBO MAKER)
+   ========================================================================== */
+.combo-maker-section {
+  background: linear-gradient(180deg, rgba(20, 18, 22, 0.95) 0%, rgba(13, 13, 15, 0.98) 100%);
+  border: 2px solid rgba(245, 181, 27, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 2.5rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 30px var(--color-yellow-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.combo-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.8rem;
+  margin: 2.2rem 0;
+}
+
+.combo-step-col h4 {
+  font-size: 1.15rem;
+  color: var(--color-yellow);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.combo-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.combo-option-card {
+  background: #19181b;
+  border: 1.5px solid rgba(58, 57, 59, 0.8);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.combo-option-card:hover {
+  border-color: var(--color-yellow);
+  background: rgba(245, 181, 27, 0.08);
+  transform: translateX(4px);
+}
+
+.combo-option-card.selected {
+  border-color: var(--color-yellow);
+  background: linear-gradient(90deg, rgba(245, 181, 27, 0.2) 0%, rgba(233, 121, 23, 0.15) 100%);
+  box-shadow: 0 0 15px var(--color-yellow-glow);
+}
+
+.combo-option-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.combo-option-price {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--color-yellow);
+}
+
+.combo-summary-box {
+  background: #121113;
+  border: 2px solid var(--color-yellow);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.combo-total-label {
+  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  letter-spacing: 1.5px;
+  color: var(--color-cream);
+  text-transform: uppercase;
+}
+
+.combo-total-price {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  color: var(--color-yellow);
+  line-height: 1;
+  text-shadow: 0 0 15px var(--color-yellow-glow);
+}
+
+.combo-selected-preview {
+  font-size: 0.95rem;
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   ANIMACIONES DE ENTRADA SCROLL REVEAL
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================================================== 
+   REVISIÓN DE CONVERSIÓN, ACCESIBILIDAD Y RESPONSIVE
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 4rem;
+  overflow: hidden;
+}
+
+main {
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-yellow) !important;
+  outline-offset: 4px;
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible,
+.mobile-bar-item:focus-visible,
+.cat-btn:focus-visible,
+.form-control:focus-visible,
+.menu-search-input:focus-visible {
+  box-shadow: 0 0 0 5px rgba(245, 181, 27, 0.22);
+}
+
+.order-note,
+.privacy-note,
+.allergen-summary {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.menu-results-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.2px;
+}
+
+.menu-results-summary i,
+.menu-results-summary strong {
+  color: var(--color-yellow);
+}
+
+.order-note {
+  width: 100%;
+  margin-top: -0.25rem;
+}
+
+.allergen-summary {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(245, 181, 27, 0.28);
+  border-radius: var(--radius-sm);
+  background: rgba(245, 181, 27, 0.07);
+}
+
+.allergen-summary a,
+.privacy-note a,
+.legal-links a {
+  color: var(--color-yellow);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.product-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  color: var(--color-yellow);
+  background: radial-gradient(circle at 50% 35%, rgba(245, 181, 27, 0.18), transparent 50%), #151417;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.product-image-placeholder i {
+  font-size: 3rem;
+}
+
+.product-image-placeholder span {
+  color: var(--color-cream);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.service-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.75rem 0 0;
+}
+
+.service-fact {
+  padding: 1.35rem;
+  background: rgba(17, 18, 20, 0.72);
+  border: 1px solid rgba(245, 181, 27, 0.25);
+  border-radius: var(--radius-md);
+}
+
+.service-fact i {
+  color: var(--color-yellow);
+  font-size: 1.35rem;
+  margin-bottom: 0.7rem;
+}
+
+.service-fact h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.45rem;
+}
+
+.service-fact p {
+  font-size: 0.9rem;
+}
+
+.legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.45rem;
+  font-size: 0.78rem;
+}
+
+.legal-page {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.legal-page h2 {
+  font-size: 1.65rem;
+  margin: 2rem 0 0.7rem;
+}
+
+.legal-page ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  color: var(--color-text-muted);
+}
+
+.legal-page li + li {
+  margin-top: 0.45rem;
+}
+
+.map-consent-link {
+  min-height: 330px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 2rem;
+  text-align: center;
+  background: radial-gradient(circle at 50% 40%, rgba(245, 181, 27, 0.18), transparent 48%), #171618;
+}
+
+.map-consent-link i {
+  color: var(--color-yellow);
+  font-size: 3rem;
+}
+
+.map-consent-link strong {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-white);
+}
+
+.map-consent-link span {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.menu-proof-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.menu-proof-head .eyebrow {
+  display: block;
+  color: var(--color-yellow);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.25rem;
+}
+
+.menu-proof-head h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.glovo-proof {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111214;
+  background: var(--glovo-yellow);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  flex: 0 0 auto;
+  box-shadow: 0 8px 18px rgba(255, 194, 68, 0.18);
+}
+
+.glovo-proof strong {
+  font-family: var(--font-title);
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.glovo-proof span {
+  font-size: 0.62rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.hero-food-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.hero-food {
+  position: relative;
+  min-height: 145px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(245, 181, 27, 0.35);
+  background: #111;
+}
+
+.hero-food-main {
+  grid-column: 1 / -1;
+  min-height: 240px;
+}
+
+.hero-food img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.hero-food:hover img {
+  transform: scale(1.035);
+}
+
+.food-caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 1.4rem 0.85rem 0.75rem;
+  background: linear-gradient(transparent, rgba(8, 8, 9, 0.97));
+}
+
+.food-caption > span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.food-caption strong {
+  font-family: var(--font-heading);
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.15;
+}
+
+.food-caption small {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  margin-top: 0.2rem;
+}
+
+.food-caption b {
+  color: var(--color-yellow);
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+.proof-footnote {
+  font-size: 0.68rem;
+  line-height: 1.4;
+  margin: 0 0 0.85rem;
+}
+
+.real-facts-strip {
+  position: relative;
+  z-index: 20;
+  background: #141315;
+  border-top: 1px solid rgba(245, 181, 27, 0.45);
+  border-bottom: 1px solid rgba(245, 181, 27, 0.22);
+}
+
+.real-facts-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 0.75fr;
+}
+
+.real-fact-item {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.1rem 1.4rem;
+  border-right: 1px solid rgba(245, 181, 27, 0.18);
+}
+
+.real-fact-item:last-child {
+  border-right: 0;
+}
+
+.real-fact-item > i:first-child {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: #111214;
+  background: var(--color-yellow);
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.real-fact-item span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.real-fact-item small {
+  color: var(--color-text-muted);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.real-fact-item strong {
+  color: var(--color-white);
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.real-fact-item .fact-arrow {
+  margin-left: auto;
+  color: var(--color-yellow);
+  font-size: 0.75rem;
+}
+
+.event-menu-showcase {
+  max-width: 1060px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1rem;
+  background: rgba(17, 18, 20, 0.92);
+  border: 1px solid rgba(245, 181, 27, 0.42);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+}
+
+.event-menu-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+.event-menu-copy .eyebrow,
+.brand-proof-content .eyebrow {
+  color: var(--color-yellow);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.event-menu-copy h2,
+.brand-proof-content h2 {
+  margin-top: 0.4rem;
+}
+
+.event-menu-copy p {
+  margin-bottom: 1.4rem;
+}
+
+.event-food-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.event-food-collage figure {
+  position: relative;
+  overflow: hidden;
+  min-height: 170px;
+  border-radius: 12px;
+  background: #111;
+}
+
+.event-food-collage figure:first-child {
+  grid-row: 1 / -1;
+}
+
+.event-food-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-food-collage figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1.4rem 0.75rem 0.65rem;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: linear-gradient(transparent, rgba(8, 8, 9, 0.94));
+}
+
+.brand-proof-card {
+  overflow: hidden;
+  background: rgba(17, 18, 20, 0.95);
+  border: 1px solid rgba(245, 181, 27, 0.42);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.brand-proof-photo {
+  height: 235px;
+  overflow: hidden;
+}
+
+.brand-proof-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-proof-content {
+  padding: 1.4rem;
+}
+
+.brand-proof-content h2 {
+  font-size: 1.6rem;
+}
+
+.brand-proof-content ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.brand-proof-content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.8rem;
+  background: rgba(245, 181, 27, 0.06);
+  border: 1px solid rgba(245, 181, 27, 0.16);
+  border-radius: 8px;
+}
+
+.brand-proof-content li i {
+  color: var(--color-yellow);
+  margin-top: 0.15rem;
+}
+
+.brand-proof-content li span {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+}
+
+.brand-proof-content li strong {
+  color: var(--color-white);
+  font-size: 0.78rem;
+}
+
+.verified-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.verified-source-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.65rem;
+  color: var(--color-yellow);
+  background: rgba(245, 181, 27, 0.08);
+  border: 1px solid rgba(245, 181, 27, 0.25);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+@media (max-width: 1180px) and (min-width: 1025px) {
+  .main-nav {
+    gap: 1rem;
+  }
+
+  .header-actions {
+    gap: 0.45rem;
+  }
+
+  .header-actions .btn {
+    padding-inline: 1rem;
+  }
+
+  .hero-content {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding-top: 7.5rem;
+    min-height: auto;
+  }
+
+  .hero-visual-card {
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-trust-bar {
+    flex-wrap: wrap;
+  }
+
+  .real-facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .real-fact-item:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(245, 181, 27, 0.18);
+  }
+
+  .event-menu-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    padding-bottom: 62px;
+  }
+
+  .site-header,
+  .site-header.scrolled {
+    padding: 0.55rem 0;
+    background: rgba(17, 18, 20, 0.97);
+  }
+
+  .nav-container {
+    min-height: 54px;
+  }
+
+  .brand-logo {
+    gap: 0.55rem;
+    min-width: 0;
+  }
+
+  .brand-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 1.08rem;
+    letter-spacing: 1.3px;
+  }
+
+  .brand-sub {
+    font-size: 0.56rem;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    padding: 6.5rem 0 2.75rem;
+  }
+
+  .hero-content {
+    gap: 2rem;
+  }
+
+  .hero-badge-top {
+    font-size: 0.72rem;
+    letter-spacing: 1.2px;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 15vw, 4.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .hero-cta-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    padding: 0.85rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-cta-group .btn-whatsapp {
+    grid-column: 1 / -1;
+  }
+
+  .hero-trust-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  .trust-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero-visual-card {
+    padding: 1.35rem 1rem;
+  }
+
+  .hero-card-top {
+    padding-right: 2rem;
+  }
+
+  .hero-logo-mini {
+    width: 56px;
+    height: 56px;
+  }
+
+  .foodtruck-showcase-img {
+    height: 185px;
+  }
+
+  .hero-card-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu-proof-head h2 {
+    font-size: 1.65rem;
+  }
+
+  .hero-food-main {
+    min-height: 205px;
+  }
+
+  .real-facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .real-fact-item,
+  .real-fact-item:last-child {
+    min-height: 78px;
+    grid-column: auto;
+    border-right: 0;
+    border-top: 1px solid rgba(245, 181, 27, 0.14);
+    padding: 0.9rem 1rem;
+  }
+
+  .real-fact-item:first-child {
+    border-top: 0;
+  }
+
+  .event-menu-showcase {
+    padding: 0.7rem;
+  }
+
+  .event-menu-copy {
+    padding: 1.1rem 0.8rem;
+  }
+
+  .event-food-collage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 210px 140px;
+  }
+
+  .event-food-collage figure:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .brand-proof-content ul {
+    grid-template-columns: 1fr;
+  }
+
+  .category-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.15rem 0.1rem 0.7rem;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .menu-results-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-btn {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .service-facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container,
+  .contact-info-card,
+  .banner-events,
+  .banner-glovo {
+    padding: 1.6rem 1.15rem;
+  }
+
+  .floating-whatsapp {
+    display: none;
+  }
+
+  .live-activity-toast {
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding-inline: 1rem;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .hero-cta-group {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cta-group .btn-whatsapp {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================================================== 
+   23. LENGUAJE VISUAL FOOD TRUCK
+   Detalles de carrocería, señalética de ruta y ventanilla de servicio.
+   ========================================================================== */
+
+/* Las etiquetas se leen como pequeñas placas esmaltadas con remaches. */
+.section-tag,
+.hero-badge-top {
+  border-radius: 7px;
+  border: 1px solid rgba(245, 181, 27, 0.46);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.06), transparent 42%),
+    rgba(25, 24, 27, 0.92);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.035),
+    0 5px 16px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.section-tag::before,
+.section-tag::after,
+.hero-badge-top::before,
+.hero-badge-top::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #a7a3a0;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.65), 0 1px 2px #000;
+  position: absolute;
+  top: 5px;
+}
+
+.section-tag::before,
+.hero-badge-top::before { left: 5px; }
+.section-tag::after,
+.hero-badge-top::after { right: 5px; }
+
+/* Separador inspirado en la línea central de una carretera. */
+.section-divider {
+  width: 108px;
+  height: 5px;
+  border-radius: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-yellow) 0 25px,
+    transparent 25px 35px
+  );
+  filter: drop-shadow(0 0 4px rgba(245,181,27,0.38));
+}
+
+/* Cinta que funciona como número de ruta del food truck entre bloques. */
+.truck-route-ribbon {
+  position: relative;
+  z-index: 3;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-cream);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.055), transparent 36%),
+    repeating-linear-gradient(105deg, rgba(255,255,255,0.018) 0 2px, transparent 2px 8px),
+    #171719;
+  border-top: 1px solid rgba(245,181,27,0.32);
+  border-bottom: 1px solid rgba(245,181,27,0.32);
+  box-shadow: inset 0 1px rgba(255,255,255,0.04), 0 10px 28px rgba(0,0,0,0.42);
+}
+
+.truck-route-ribbon::before,
+.truck-route-ribbon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(135deg, #111 0 12px, var(--color-yellow) 12px 24px);
+  opacity: 0.58;
+}
+
+.truck-route-ribbon::before { top: 0; }
+.truck-route-ribbon::after { bottom: 0; }
+
+.truck-route-track {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.route-code {
+  flex: 0 0 auto;
+  padding: 0.48rem 0.7rem;
+  color: #111214;
+  background: var(--color-yellow);
+  border: 2px solid #d9990a;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.3), 0 3px 9px #000;
+}
+
+.route-copy,
+.route-stop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+.route-copy i,
+.route-stop i { color: var(--color-yellow); }
+
+.route-road {
+  flex: 1;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.route-road::before,
+.route-road::after,
+.route-road i {
+  content: '';
+  display: block;
+  height: 2px;
+  flex: 1;
+  background: rgba(245,181,27,0.62);
+}
+
+.route-road i {
+  flex: 0 0 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d2d0ca;
+  box-shadow: 0 0 0 3px #28272a, 0 0 0 4px rgba(245,181,27,0.35);
+}
+
+/* Las tarjetas de comida recuerdan a la ventanilla y la carrocería del truck. */
+.product-card::before {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  inset: 0 0 auto;
+  height: 5px;
+  pointer-events: none;
+  background: repeating-linear-gradient(135deg, var(--color-yellow) 0 13px, #171719 13px 26px);
+  opacity: 0.9;
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  z-index: 6;
+  top: 11px;
+  left: 10px;
+  right: 10px;
+  height: 5px;
+  background:
+    radial-gradient(circle at left, #aaa8a2 0 2.4px, transparent 2.8px),
+    radial-gradient(circle at right, #aaa8a2 0 2.4px, transparent 2.8px);
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.hero-visual-card,
+.event-menu-showcase,
+.brand-proof-card,
+.contact-info-card,
+.form-container,
+.service-fact {
+  background-image:
+    linear-gradient(145deg, rgba(255,255,255,0.035), transparent 34%),
+    repeating-linear-gradient(100deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 7px);
+}
+
+.event-menu-showcase,
+.brand-proof-card,
+.contact-info-card,
+.form-container,
+.service-fact {
+  position: relative;
+}
+
+.event-menu-showcase::before,
+.brand-proof-card::before,
+.contact-info-card::before,
+.form-container::before,
+.service-fact::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  right: 10px;
+  top: 8px;
+  height: 4px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at left, #9b9994 0 2px, transparent 2.5px),
+    radial-gradient(circle at right, #9b9994 0 2px, transparent 2.5px);
+  opacity: 0.62;
+}
+
+/* El pie termina como un tramo de asfalto, cerrando la ruta visual. */
+.site-footer::before {
+  height: 6px;
+  background: repeating-linear-gradient(135deg, var(--color-yellow) 0 16px, #111214 16px 32px);
+}
+
+.footer-slogan::before {
+  content: '●  ●';
+  display: block;
+  margin-bottom: 0.28rem;
+  color: #85827e;
+  font-size: 0.45rem;
+  letter-spacing: 9px;
+}
+
+@media (max-width: 700px) {
+  .truck-route-track {
+    gap: 0.65rem;
+    font-size: 0.66rem;
+    letter-spacing: 1.1px;
+  }
+
+  .route-copy { white-space: normal; line-height: 1.25; }
+  .route-road { display: none; }
+  .route-stop { margin-left: auto; }
+
+}
+
+@media (max-width: 420px) {
+  .truck-route-ribbon { min-height: 58px; }
+  .truck-route-track { min-height: 58px; }
+  .route-copy i { display: none; }
+  .route-stop { font-size: 0.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-content {
+    animation: none !important;
+    transform: none;
+  }
+}
