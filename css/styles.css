@@ -1037,6 +1037,18 @@ p {
   align-items: center;
 }
 
+.traveler-title {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.traveler-copy {
+  font-size: 1.08rem;
+  color: #e6e3e8;
+  line-height: 1.7;
+}
+
 .traveler-speed-badge {
   display: inline-flex;
   align-items: center;
@@ -3562,5 +3574,75 @@ main {
   .ticker-content {
     animation: none !important;
     transform: none;
+  }
+}
+
+/* Estación Express: lectura cómoda en móvil, sin tarjetas estrechas. */
+@media (max-width: 600px) {
+  .traveler-express-card {
+    padding: 2rem 1.1rem;
+    border-width: 1px;
+    border-radius: 18px;
+  }
+
+  .traveler-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .traveler-speed-badge {
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.66rem;
+    line-height: 1.35;
+    letter-spacing: 0.85px;
+    text-align: center;
+  }
+
+  .traveler-title {
+    font-size: clamp(2rem, 10vw, 2.65rem);
+    line-height: 1.08;
+  }
+
+  .traveler-copy {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  .traveler-perks-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin: 1.45rem 0 1.55rem;
+  }
+
+  .traveler-perk {
+    padding: 0.9rem 1rem;
+    align-items: center;
+  }
+
+  .traveler-perk h4 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .traveler-perk p {
+    font-size: 0.87rem;
+    line-height: 1.45;
+  }
+
+  .traveler-visual-box {
+    padding: 1.5rem 1rem;
+  }
+
+  .traveler-express-card .banner-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .traveler-express-card .banner-actions .btn {
+    width: 100%;
+    margin: 0;
   }
 }
