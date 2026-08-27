@@ -603,6 +603,57 @@ p {
   box-shadow: 0 0 12px var(--color-yellow);
 }
 
+/* Matrícula de marca: detalle visual del food truck en la carta destacada. */
+.foodtruck-license-plate {
+  position: relative;
+  display: grid;
+  gap: 0.08rem;
+  margin: 0.15rem 0 1rem;
+  padding: 0.48rem 1.35rem 0.42rem;
+  overflow: hidden;
+  text-align: center;
+  color: var(--color-yellow);
+  background:
+    radial-gradient(circle at 13px 13px, #94918b 0 3px, #252427 3.5px 5px, transparent 5.5px),
+    radial-gradient(circle at calc(100% - 13px) 13px, #94918b 0 3px, #252427 3.5px 5px, transparent 5.5px),
+    radial-gradient(circle at 13px calc(100% - 13px), #94918b 0 3px, #252427 3.5px 5px, transparent 5.5px),
+    radial-gradient(circle at calc(100% - 13px) calc(100% - 13px), #94918b 0 3px, #252427 3.5px 5px, transparent 5.5px),
+    linear-gradient(145deg, #26262b, #111214 62%);
+  border: 3px solid var(--color-orange);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 7px 16px rgba(0,0,0,0.42);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+.foodtruck-license-plate::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(245,181,27,0.62);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.foodtruck-license-plate > * { position: relative; z-index: 1; }
+
+.plate-top,
+.plate-bottom {
+  color: var(--color-orange);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 2.35px;
+}
+
+.foodtruck-license-plate strong {
+  color: #fffaf0;
+  font-family: var(--font-title);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1;
+  letter-spacing: 2px;
+  text-shadow: 0 2px #000;
+}
+
 .hero-corner-ribbon {
   position: absolute;
   top: 22px;
