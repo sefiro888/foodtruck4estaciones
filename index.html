@@ -8,6 +8,17 @@
   <meta name="keywords" content="Food truck en Santander, Perritos calientes en Santander, Street food Santander, Comida peruana Santander, Comida a domicilio Santander, Food truck para eventos en Cantabria">
   <meta name="author" content="Full Track 4 Estaciones">
   <meta name="theme-color" content="#111214">
+  <script>
+    (function () {
+      try {
+        if (!sessionStorage.getItem('fullTrackIntroShown') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('ft-intro-pending');
+        }
+      } catch (error) {
+        // Si el almacenamiento no está disponible, la web carga directamente.
+      }
+    }());
+  </script>
 
   <!-- OpenGraph / Social Media -->
   <meta property="og:type" content="restaurant">
@@ -28,7 +39,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Estilos del Proyecto -->
-  <link rel="stylesheet" href="css/styles.css?v=20260828-2">
+  <link rel="stylesheet" href="css/styles.css?v=20260828-3">
+  <link rel="stylesheet" href="css/intro.css?v=20260828-1">
 
   <!-- Schema.org JSON-LD para SEO Local -->
   <script type="application/ld+json">
@@ -60,6 +72,24 @@
   </script>
 </head>
 <body>
+
+  <!-- INTRO DE BIENVENIDA: solo se activa al entrar en Inicio -->
+  <section class="ft-intro-overlay" aria-label="Bienvenida de Full Track 4 Estaciones" aria-live="polite">
+    <button class="ft-intro-skip" type="button" aria-label="Saltar intro y entrar en la web">Saltar intro</button>
+    <div class="ft-intro-scene">
+      <div class="ft-intro-glow" aria-hidden="true"></div>
+      <div class="ft-intro-truck-frame">
+        <img class="ft-intro-truck" src="assets/intro/furgoneta-food-truck.jpg" alt="Ilustración lateral del food truck Full Track 4 Estaciones">
+        <div class="ft-intro-shutter" aria-hidden="true">
+          <span class="ft-intro-shutter-line"></span>
+          <img src="assets/logo-real-clean.png" alt="">
+          <span class="ft-intro-shutter-line"></span>
+        </div>
+        <div class="ft-intro-steam" aria-hidden="true"><i></i><i></i><i></i></div>
+      </div>
+      <p class="ft-intro-message">EL SABOR YA ESTÁ AQUÍ</p>
+    </div>
+  </section>
 
   <!-- CABECERA PRINCIPAL -->
   <header class="site-header">
@@ -1115,6 +1145,7 @@
   </div>
 
   <!-- SCRIPT -->
+  <script src="js/intro.js?v=20260828-1"></script>
   <script src="js/main.js?v=20260827-2"></script>
 </body>
 </html>
