@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEmbersCanvas();
   init3DTilt();
   initScrollReveal();
+  initFoodImageLightbox();
 });
 
 /* ==========================================================================
@@ -352,7 +353,7 @@ function initEmbersCanvas() {
   animate();
 }
 
-/* ========================================================================== 
+/* ===========================================================================
    8. EFECTO 3D TILT EN TARJETAS CON EL MOVIMIENTO DEL RATÓN
    ========================================================================== */
 function init3DTilt() {
@@ -450,4 +451,75 @@ function initScrollReveal() {
       observer.observe(el);
     });
   }
+}
+
+/* ===========================================================================
+   11. VISOR DE FOTOS DE PLATOS
+   ========================================================================== */
+function initFoodImageLightbox() {
+  const images = document.querySelectorAll('.product-image-box .product-img, .event-food-collage img, .brand-proof-photo img');
+  if (!images.length) return;
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'food-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Vista ampliada del plato');
+  lightbox.innerHTML = `
+    <button type="button" class="food-lightbox-close" aria-label="Cerrar imagen ampliada">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <figure class="food-lightbox-figure">
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector('img');
+  const caption = lightbox.querySelector('figcaption');
+  const closeButton = lightbox.querySelector('.food-lightbox-close');
+  let lastTrigger = null;
+
+  function closeLightbox() {
+    if (!lightbox.classList.contains('is-open')) return;
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('lightbox-open');
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  function openLightbox(image, trigger) {
+    lastTrigger = trigger;
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt;
+    caption.textContent = image.alt.replace(/ Full Track$/i, '');
+    lightbox.classList.add('is-open');
+    document.body.classList.add('lightbox-open');
+    closeButton.focus();
+  }
+
+  images.forEach(image => {
+    const trigger = image.closest('.product-image-box, .event-food-collage figure, .brand-proof-photo');
+    if (!trigger) return;
+
+    trigger.classList.add('is-zoomable');
+    trigger.setAttribute('role', 'button');
+    trigger.setAttribute('tabindex', '0');
+    trigger.setAttribute('aria-label', `Ampliar imagen: ${image.alt}`);
+    trigger.addEventListener('click', () => openLightbox(image, trigger));
+    trigger.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLightbox(image, trigger);
+      }
+    });
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeLightbox();
+  });
 }

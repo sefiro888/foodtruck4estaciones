@@ -3419,15 +3419,131 @@ main {
 
 /* Separador inspirado en la línea central de una carretera. */
 .section-divider {
-  width: 108px;
-  height: 5px;
-  border-radius: 1px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--color-yellow) 0 25px,
-    transparent 25px 35px
-  );
-  filter: drop-shadow(0 0 4px rgba(245,181,27,0.38));
+  display: none;
+}
+
+/* Fotos de plato ampliables */
+.is-zoomable {
+  cursor: zoom-in;
+}
+
+.is-zoomable:focus-visible {
+  outline: 3px solid var(--color-yellow);
+  outline-offset: 3px;
+}
+
+.product-image-box.is-zoomable::before {
+  content: '\f00e';
+  position: absolute;
+  z-index: 4;
+  right: 0.7rem;
+  top: 0.7rem;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: #111214;
+  background: var(--color-yellow);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+  font-family: "Font Awesome 6 Free";
+  font-size: 0.82rem;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.product-image-box.is-zoomable:hover::before,
+.product-image-box.is-zoomable:focus-visible::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.food-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(4, 4, 5, 0.92);
+  backdrop-filter: blur(7px);
+}
+
+.food-lightbox.is-open {
+  display: flex;
+}
+
+.food-lightbox-figure {
+  max-width: min(980px, 94vw);
+  max-height: 90vh;
+  margin: 0;
+  text-align: center;
+}
+
+.food-lightbox-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(90vh - 3rem);
+  margin: 0 auto;
+  border: 2px solid rgba(245,181,27,0.72);
+  border-radius: 14px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.82);
+  object-fit: contain;
+}
+
+.food-lightbox figcaption {
+  margin-top: 0.7rem;
+  color: var(--color-cream);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.food-lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  color: #111214;
+  background: var(--color-yellow);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.52);
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.lightbox-open {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .product-image-box.is-zoomable::before {
+    opacity: 1;
+    transform: none;
+  }
+
+  .food-lightbox {
+    padding: 1rem;
+  }
+
+  .food-lightbox-figure {
+    max-width: 100%;
+  }
+
+  .food-lightbox-figure img {
+    max-height: calc(86vh - 3rem);
+    border-radius: 10px;
+  }
 }
 
 /* Cinta que funciona como número de ruta del food truck entre bloques. */
