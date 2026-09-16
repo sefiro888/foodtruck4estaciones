@@ -1562,6 +1562,27 @@ p {
   flex-grow: 1;
 }
 
+.product-extras {
+  display: grid;
+  gap: 0.18rem;
+  margin: 0.7rem 0;
+  padding: 0.65rem 0.75rem;
+  border-left: 2px solid var(--color-yellow);
+  border-radius: 0 6px 6px 0;
+  background: rgba(245,181,27,0.07);
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.product-extras strong {
+  color: var(--color-yellow);
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
 .product-footer {
   display: flex;
   gap: 0.6rem;
