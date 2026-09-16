@@ -77,13 +77,13 @@ function initNavbar() {
 /* ==========================================================================
    2. ESTADO DE APERTURA EN VIVO (HORARIO SANTANDER)
    Horario:
-   Lunes: 11:00–23:00
-   Martes: CERRADO
-   Miércoles: 11:00–23:00
-   Jueves: 11:00–23:00
-   Viernes: 11:00–23:00
-   Sábado: 11:00–23:00
-   Domingo: 11:00–23:00
+   Lunes: 11:00–22:00
+   Martes: 12:00–15:00 y 18:00–22:00
+   Miércoles: 12:00–15:00 y 18:00–22:00
+   Jueves: 11:00–22:00
+   Viernes: 11:00–24:00
+   Sábado: 11:00–24:00
+   Domingo: 11:00–24:00
    ========================================================================== */
 function initLiveScheduleStatus() {
   const statusBadges = document.querySelectorAll('.live-status-container');
@@ -105,13 +105,19 @@ function initLiveScheduleStatus() {
   const minutes = Number(santanderNow.minute);
   const currentTime = hours + minutes / 60;
 
-  // Martes (day 2) cerrado; Otros días 11:00 a 23:00
-  let isOpen = false;
-  if (dayOfWeek !== 2) {
-    if (currentTime >= 11.0 && currentTime < 23.0) {
-      isOpen = true;
-    }
-  }
+  const weeklySchedule = {
+    0: [[11, 24]],
+    1: [[11, 22]],
+    2: [[12, 15], [18, 22]],
+    3: [[12, 15], [18, 22]],
+    4: [[11, 22]],
+    5: [[11, 24]],
+    6: [[11, 24]]
+  };
+  const todaySchedule = weeklySchedule[dayOfWeek] || [];
+  const isOpen = todaySchedule.some(([start, end]) => currentTime >= start && currentTime < end);
+  const formatHour = (hour) => `${String(hour).padStart(2, '0')}:00`;
+  const todayLabel = todaySchedule.map(([start, end]) => `${formatHour(start)} - ${formatHour(end)}`).join(' y ');
 
   // Actualizar badges en las páginas
   statusBadges.forEach(container => {
@@ -119,11 +125,11 @@ function initLiveScheduleStatus() {
       container.innerHTML = `
         <div class="live-status-badge open">
           <span class="status-dot"></span>
-          <span>¡Abierto ahora! (11:00 - 23:00)</span>
+          <span>¡Abierto ahora! (${todayLabel})</span>
         </div>
       `;
     } else {
-      const nextOpenText = (dayOfWeek === 2) ? 'Abrimos mañana a las 11:00' : (currentTime < 11 ? 'Abrimos hoy a las 11:00' : 'Abrimos mañana a las 11:00');
+      const nextOpenText = currentTime < (todaySchedule[0]?.[0] ?? 11) ? `Abrimos hoy a las ${formatHour(todaySchedule[0]?.[0] ?? 11)}` : 'Abrimos en el próximo turno';
       container.innerHTML = `
         <div class="live-status-badge closed">
           <span class="status-dot"></span>
@@ -246,7 +252,7 @@ function initEventForm() {
       `💬 *Detalles adicionales:* ${mensaje}\n\n` +
       `¡Quedo a la espera de vuestra propuesta! Gracias.`;
 
-    const waUrl = `https://wa.me/34678766196?text=${encodeURIComponent(waText)}`;
+    const waUrl = `https://wa.me/34642706501?text=${encodeURIComponent(waText)}`;
     window.open(waUrl, '_blank');
   });
 }
@@ -271,7 +277,7 @@ function initContactForm() {
       `📌 *Motivo:* ${motivo}\n` +
       `💬 *Mensaje:* ${mensaje}`;
 
-    const waUrl = `https://wa.me/34678766196?text=${encodeURIComponent(waText)}`;
+    const waUrl = `https://wa.me/34642706501?text=${encodeURIComponent(waText)}`;
     window.open(waUrl, '_blank');
   });
 }
@@ -404,7 +410,7 @@ function initComboMaker() {
 
     if (whatsappBtn) {
       const msg = encodeURIComponent(`¡Hola Full Track! Quiero pedir este Combo Express (${total.toFixed(2)}€):\n- Principal: ${baseItem.name}\n- Bebida: ${drinkItem.name}\n- Postre: ${dessertItem ? dessertItem.name : 'Sin postre'}\n¿Cuándo puedo pasar a recogerlo?`);
-      whatsappBtn.href = `https://wa.me/34678766196?text=${msg}`;
+      whatsappBtn.href = `https://wa.me/34642706501?text=${msg}`;
     }
   }
 
