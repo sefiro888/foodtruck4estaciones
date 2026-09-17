@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initLiveScheduleStatus();
   initMenuFilters();
-  initEventForm();
   initContactForm();
   // Inicializar componentes interactivos avanzados
   initEmbersCanvas();
@@ -222,44 +221,7 @@ function initMenuFilters() {
   }
 }
 
-/* ==========================================================================
-   4. FORMULARIO DE EVENTOS CON ENVÍO A WHATSAPP (eventos.html)
-   ========================================================================== */
-function initEventForm() {
-  const eventForm = document.getElementById('eventQuoteForm');
-  if (!eventForm) return;
-
-  eventForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nombre = document.getElementById('eventNombre')?.value.trim() || 'Cliente';
-    const telefono = document.getElementById('eventTelefono')?.value.trim() || '';
-    const tipoEvento = document.getElementById('eventTipo')?.value || 'Evento';
-    const fecha = document.getElementById('eventFecha')?.value || 'A determinar';
-    const localidad = document.getElementById('eventLocalidad')?.value.trim() || 'Santander/Cantabria';
-    const personas = document.getElementById('eventPersonas')?.value.trim() || 'Por definir';
-    const mensaje = document.getElementById('eventMensaje')?.value.trim() || 'Deseo información sobre el servicio de Food Truck.';
-
-    const waText = 
-      `¡Hola Full Track 4 Estaciones! 👋\n` +
-      `Me gustaría solicitar información y presupuesto para un evento con vuestro Food Truck:\n\n` +
-      `👤 *Nombre:* ${nombre}\n` +
-      `📞 *Teléfono:* ${telefono}\n` +
-      `🎉 *Tipo de evento:* ${tipoEvento}\n` +
-      `📅 *Fecha prevista:* ${fecha}\n` +
-      `📍 *Localidad:* ${localidad}\n` +
-      `👥 *N.º de personas estimado:* ${personas}\n` +
-      `💬 *Detalles adicionales:* ${mensaje}\n\n` +
-      `¡Quedo a la espera de vuestra propuesta! Gracias.`;
-
-    const waUrl = `https://wa.me/34642706501?text=${encodeURIComponent(waText)}`;
-    window.open(waUrl, '_blank');
-  });
-}
-
-/* ==========================================================================
-   5. FORMULARIO DE CONTACTO CON ENVÍO A WHATSAPP (contacto.html)
-   ========================================================================== */
+/* Formulario de contacto por WhatsApp. */
 function initContactForm() {
   const contactForm = document.getElementById('quickContactForm');
   if (!contactForm) return;

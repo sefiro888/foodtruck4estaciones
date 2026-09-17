@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="css/styles.css?v=20260916-1">
+  <link rel="stylesheet" href="css/styles.css?v=20260917-mobile">
 </head>
 <body>
 
@@ -45,7 +45,7 @@
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="index.html" class="nav-link">Inicio</a>
         <a href="carta.html" class="nav-link active">Carta</a>
-        <a href="eventos.html" class="nav-link">Eventos</a>
+
         <a href="nosotros.html" class="nav-link">Nosotros</a>
         <a href="contacto.html" class="nav-link">Contacto</a>
       </nav>
@@ -140,8 +140,8 @@
 
         <!-- ==================== LO MÁS VENDIDO ==================== -->
         <!-- Sándwich Peruano -->
-        <div class="product-card menu-item-card" data-category="mas-vendido" id="mas-vendido">
-          <div class="product-image-box">
+        <div id="sandwich-peruano" class="product-card menu-item-card" data-category="mas-vendido">
+          <div class="product-image-box" id="mas-vendido">
             <span class="product-badge-corner">TOP VENTAS</span>
             <img src="assets/dishes/sandwich-peruano-web.webp?v=20260917" alt="Sándwich Peruano Full Track" class="product-img" loading="lazy">
           </div>
@@ -162,7 +162,7 @@
         </div>
 
         <!-- Salchipapa -->
-        <div class="product-card menu-item-card" data-category="mas-vendido">
+        <div id="salchipapa" class="product-card menu-item-card" data-category="mas-vendido">
           <div class="product-image-box">
             <span class="product-badge-corner">TOP VENTAS</span>
             <img src="assets/dishes/salchipapa-web.webp?v=20260917" alt="Salchipapa Full Track" class="product-img" loading="lazy">
@@ -184,7 +184,7 @@
         </div>
 
         <!-- Tequeños de queso -->
-        <div class="product-card menu-item-card" data-category="mas-vendido">
+        <div id="tequenos-de-queso" class="product-card menu-item-card" data-category="mas-vendido">
           <div class="product-image-box">
             <span class="product-badge-corner">4 UNIDADES</span>
             <img src="assets/dishes/tequenos-de-queso-4-uds-web.webp?v=20260917" alt="Tequeños de Queso Full Track" class="product-img" loading="lazy">
@@ -502,8 +502,8 @@
 
         <!-- ==================== PAN LARGO ==================== -->
         <!-- Perrito Monstruo -->
-        <div class="product-card menu-item-card" data-category="pan-largo" id="pan-largo">
-          <div class="product-image-box">
+        <div id="perrito-monstruo" class="product-card menu-item-card" data-category="pan-largo">
+          <div class="product-image-box" id="pan-largo">
             <span class="product-badge-corner">ESTRELLA</span>
             <img src="assets/dishes/perrito-monstruo-web.webp?v=20260917" alt="Perrito Monstruo Full Track" class="product-img" loading="lazy">
           </div>
@@ -524,7 +524,7 @@
         </div>
 
         <!-- Crispy Chicken (Pan Largo) -->
-        <div class="product-card menu-item-card" data-category="pan-largo">
+        <div id="crispy-chicken" class="product-card menu-item-card" data-category="pan-largo">
           <div class="product-image-box">
             <span class="product-badge-corner">PAN LARGO</span>
             <img src="assets/dishes/crispy-chicken-web.webp?v=20260917" alt="Crispy Chicken Full Track" class="product-img" loading="lazy">
@@ -641,7 +641,7 @@
         </div>
 
         <!-- Chicharrón -->
-        <div class="product-card menu-item-card" data-category="pan-redondo">
+        <div id="chicharron" class="product-card menu-item-card" data-category="pan-redondo">
           <div class="product-image-box">
             <span class="product-badge-corner">TRADICIÓN</span>
             <img src="assets/dishes/chicharron-web.webp?v=20260917" alt="Chicharrón Full Track" class="product-img" loading="lazy">
@@ -686,7 +686,7 @@
 
         <!-- ==================== ROLLOS & ESPECIALES ==================== -->
         <!-- Rollo con Bacon -->
-        <div class="product-card menu-item-card" data-category="especiales">
+        <div id="rollo-con-bacon" class="product-card menu-item-card" data-category="especiales">
           <div class="product-image-box">
             <span class="product-badge-corner">ROLL</span>
             <img src="assets/dishes/rollo-con-bacon-web.webp?v=20260917" alt="Rollo con Bacon Full Track" class="product-img" loading="lazy">
@@ -708,7 +708,7 @@
         </div>
 
         <!-- Rollo con Lomo -->
-        <div class="product-card menu-item-card" data-category="especiales">
+        <div id="rollo-con-lomo" class="product-card menu-item-card" data-category="especiales">
           <div class="product-image-box">
             <span class="product-badge-corner">ROLL</span>
             <img src="assets/dishes/rollo-con-lomo-web.webp?v=20260917" alt="Rollo con Lomo Full Track" class="product-img" loading="lazy">
@@ -730,7 +730,7 @@
         </div>
 
         <!-- Chicken Roll -->
-        <div class="product-card menu-item-card" data-category="especiales">
+        <div id="chicken-roll" class="product-card menu-item-card" data-category="especiales">
           <div class="product-image-box">
             <span class="product-badge-corner">ROLL</span>
             <img src="assets/dishes/chiken-roll-web.webp?v=20260917" alt="Chicken Roll Full Track" class="product-img" loading="lazy">
@@ -1148,7 +1148,7 @@
           <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.4rem;">FULL TRACK 4 ESTACIONES</h3>
           <p>Food truck y street food de referencia en Santander. Perritos, sándwiches peruanos, burgers y picoteo gourmet.</p>
           <div class="footer-socials">
-            <a href="https://www.instagram.com/reel/DaOkH8lqija/?utm_source=ig_web_copy_link&igsi=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/fulltruck4estaciones/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://wa.me/34642706501" target="_blank" rel="noopener noreferrer" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="https://glovoapp.com/es/es/santander/stores/food-truck-peruano-perritos-calientes-santander" target="_blank" rel="noopener noreferrer" class="social-btn" title="Glovo"><i class="fa-solid fa-motorcycle"></i></a>
             <a href="tel:+34642706501" class="social-btn" title="Llamar"><i class="fa-solid fa-phone"></i></a>
@@ -1160,7 +1160,6 @@
           <ul class="footer-links">
             <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Inicio</a></li>
             <li><a href="carta.html"><i class="fa-solid fa-chevron-right"></i> Carta Completa</a></li>
-            <li><a href="eventos.html"><i class="fa-solid fa-chevron-right"></i> Food Truck para Eventos</a></li>
             <li><a href="nosotros.html"><i class="fa-solid fa-chevron-right"></i> Sobre Nosotros</a></li>
             <li><a href="contacto.html"><i class="fa-solid fa-chevron-right"></i> Contacto y Horario</a></li>
           </ul>
@@ -1193,7 +1192,7 @@
       <div class="footer-bottom">
         <div>
           &copy; 2026 <strong>Full Track 4 Estaciones</strong>. Todos los derechos reservados.
-          <div class="legal-links"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="alergenos.html">Alérgenos</a></div>
+          <div class="legal-links"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="alergenos.html">Alérgenos</a></div>
         </div>
         <div class="footer-slogan">Sabor callejero. Actitud Full Track.</div>
       </div>
@@ -1227,6 +1226,6 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=20260827-2"></script>
+  <script src="js/main.js?v=20260917-legal"></script>
 </body>
 </html>

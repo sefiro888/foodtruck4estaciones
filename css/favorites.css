@@ -1,0 +1,91 @@
+/* Home: escaparate de los nueve favoritos. */
+.wanted-section {
+  position: relative;
+  background: radial-gradient(ellipse at 85% 15%, #64301b40, transparent 45%), #131214;
+  padding-top: 0;
+  border-bottom: 1px solid #f5b51b40;
+  scroll-margin-top: 100px;
+}
+.wanted-ribbon { overflow: hidden; padding: 13px 0; background: var(--color-yellow); color: #171315; margin-bottom: 64px; }
+.wanted-ribbon span { display: block; width: max-content; font: 700 16px var(--font-heading); letter-spacing: 4px; word-spacing: 14px; }
+.wanted-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 40px; }
+.wanted-eyebrow { color: var(--color-yellow); font: 600 12px var(--font-body); letter-spacing: 2px; display: inline-block; }
+.wanted-heading h2 { font-size: clamp(4.5rem, 10vw, 8.5rem); line-height: .88; margin: 22px 0; letter-spacing: 1px; }
+.wanted-heading h2 span { color: var(--color-yellow); }
+.wanted-heading p { max-width: 550px; }
+.wanted-stamp { width: 160px; height: 160px; flex-shrink: 0; border: 2px solid var(--color-yellow); outline: 1px dashed #f5b51b90; outline-offset: -9px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--color-yellow); transform: rotate(10deg); background: #f5b51b09; }
+.wanted-stamp strong { font: 64px/.95 var(--font-title); }
+.wanted-stamp span { font: 20px var(--font-heading); letter-spacing: 2px; }
+.wanted-stamp small { font-size: 9px; letter-spacing: 3px; margin-top: 3px; }
+.wanted-heroes, .wanted-classics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.wanted-section .wanted-card { border: 1px solid #f5b51b45; border-radius: 18px; background: linear-gradient(145deg, #29231f, #1b191a 65%); min-width: 0; }
+.wanted-section .wanted-card::before, .wanted-section .wanted-card::after { display: none; }
+.wanted-section .product-image-box { height: auto; aspect-ratio: 4 / 3; border-bottom: 1px solid #f5b51b45; }
+.wanted-section .wanted-card--hero .product-image-box { aspect-ratio: 3 / 2; }
+.wanted-section .product-image-box::after { height: 25%; }
+.wanted-badge { position: absolute; z-index: 2; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; background: var(--color-yellow); color: #171315; box-shadow: 0 4px 16px #0005; border-radius: 5px; font: 700 11px var(--font-body); letter-spacing: .6px; }
+.wanted-section .product-details { padding: 24px; }
+.wanted-section .product-header { flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.wanted-section .product-name { font-size: 1.85rem; }
+.wanted-section .wanted-card--hero .product-name { font-size: clamp(2rem, 3vw, 2.7rem); }
+.wanted-section .product-price { background: #f5b51b12; padding: 3px 10px; border-radius: 6px; font-size: 1.4rem; white-space: normal; }
+.wanted-section .product-desc { margin-top: 8px; }
+.wanted-link { border-top: 1px solid #ffffff15; padding-top: 14px; color: var(--color-yellow); font-weight: 700; display: flex; align-items: center; justify-content: space-between; min-height: 44px; }
+.wanted-link i { transition: transform .2s; }
+.wanted-link:hover i { transform: translateX(5px); }
+.wanted-link:focus-visible { outline: 2px solid var(--color-yellow); outline-offset: 5px; }
+.wanted-rolls { margin-top: 40px; padding: 28px; border: 1px solid #f5b51b55; border-radius: 22px; background: radial-gradient(ellipse at top left, #f5b51b15, transparent 70%); }
+.wanted-group-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.wanted-group-heading h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-top: 8px; }
+.wanted-group-heading p { font-size: .85rem; max-width: 260px; }
+.rolls-flavor-callout { padding: 14px 20px; border-left: 3px solid var(--color-yellow); background: linear-gradient(100deg, #f5b51b18, transparent); transform: rotate(-2deg); flex-shrink: 0; }
+.rolls-flavor-kicker { font-size: 9px; letter-spacing: 2.5px; color: var(--color-cream); font-weight: 700; }
+.rolls-flavor-options { display: flex; align-items: center; gap: 10px; font: 32px/1.3 var(--font-title); }
+.rolls-flavor-options a { color: var(--color-yellow); }
+.rolls-flavor-options span { color: #bdb9bd80; font-size: 23px; }
+.rolls-flavor-options a:hover { color: var(--color-white); }
+.rolls-flavor-options a:focus-visible { outline: 2px solid var(--color-yellow); outline-offset: 3px; }
+.rolls-flavor-line { font-size: 12px; color: var(--color-white); font-weight: 600; }
+@media (min-width: 641px) and (max-width: 1000px) { .wanted-rolls > .wanted-group-heading { align-items: start; flex-direction: column; } }
+@media (max-width: 640px) { .rolls-flavor-callout { margin: 8px 0; padding: 10px 14px; } .rolls-flavor-options { font-size: 28px; gap: 8px; } }
+.wanted-rolls-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.wanted-rolls-grid .product-details { padding: 20px; }
+.wanted-more-heading { margin-top: 48px; }
+.wanted-bottom { display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid #f5b51b40; }
+.wanted-bottom p { color: var(--color-white); font-weight: 700; }
+.wanted-bottom p span { display: block; font-size: .85rem; color: var(--color-text-muted); font-weight: 400; }
+@media (max-width: 900px) {
+  .wanted-rolls { padding: 20px; }
+  .wanted-rolls-grid { gap: 12px; }
+  .wanted-rolls-grid .product-details { padding: 15px; }
+  .wanted-rolls-grid .product-name { font-size: 1.6rem; }
+  .wanted-badge { left: 10px; top: 10px; font-size: 9px; padding: 7px 9px; }
+}
+@media (max-width: 640px) {
+  .wanted-ribbon { margin-bottom: 38px; }
+  .wanted-heading { align-items: start; gap: 10px; }
+  .wanted-heading h2 { font-size: clamp(3.8rem, 15vw, 5.8rem); }
+  .wanted-heading p { font-size: .88rem; }
+  .wanted-heading .wanted-eyebrow { font-size: 9px; letter-spacing: 1px; }
+  .wanted-stamp { width: 86px; height: 86px; margin-top: 32px; outline-offset: -6px; }
+  .wanted-stamp strong { font-size: 32px; }
+  .wanted-stamp span { font-size: 10px; letter-spacing: 1px; }
+  .wanted-stamp small { font-size: 6px; letter-spacing: 1px; }
+  .wanted-stamp i { font-size: 9px; }
+  .wanted-heroes, .wanted-classics, .wanted-rolls-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .wanted-rolls { padding: 16px; margin-top: 28px; }
+  .wanted-group-heading, .wanted-bottom { flex-direction: column; align-items: start; gap: 12px; }
+  .wanted-section .product-details { padding: 20px; }
+  .wanted-section .product-name { font-size: 1.9rem; }
+  .wanted-bottom .btn { width: 100%; font-size: .9rem; }
+}
+@media (max-width: 360px) {
+  .wanted-heading { position: relative; display: block; }
+  .wanted-heading h2 { font-size: 3.8rem; }
+  .wanted-stamp { position: absolute; right: 0; top: 16px; width: 70px; height: 70px; }
+  .wanted-heading p { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wanted-section *, .wanted-section *::before, .wanted-section *::after { transition: none !important; animation: none !important; }
+  .wanted-section .product-card:hover, .wanted-section .product-card:hover .product-img { transform: none; }
+}
